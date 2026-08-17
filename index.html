@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endangered Animals - Red Book</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #200000, #5c0000, #9b1c1c);
+            color: white;
+        }
+
+        .presentation {
+            width: 90%;
+            max-width: 1050px;
+            min-height: 650px;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+            min-height: 650px;
+            padding: 60px 70px 100px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: fade 0.5s ease;
+            text-align: center;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .counter {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.35);
+            font-size: 15px;
+        }
+
+        .animal {
+            font-size: 90px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 58px;
+            color: #ffdddd;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 43px;
+            color: #ffcccc;
+            margin-bottom: 25px;
+        }
+
+        p {
+            max-width: 850px;
+            font-size: 21px;
+            line-height: 1.7;
+        }
+
+        .subtitle {
+            font-size: 25px;
+            color: #eeeeee;
+        }
+
+        ul {
+            text-align: left;
+            max-width: 750px;
+            margin-top: 15px;
+            font-size: 20px;
+            line-height: 1.9;
+        }
+
+        .highlight {
+            color: #ffcccc;
+            font-weight: bold;
+        }
+
+        /* Red Book special design */
+        .red-book {
+            border: 3px solid #ff4444;
+            background: linear-gradient(
+                135deg,
+                rgba(150, 0, 0, 0.45),
+                rgba(50, 0, 0, 0.45)
+            );
+        }
+
+        .red-book h2 {
+            color: #ff4d4d;
+        }
+
+        .red-book-title {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #c40000;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .buttons {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        button {
+            border: none;
+            padding: 14px 25px;
+            border-radius: 30px;
+            background: #ffcccc;
+            color: #4b0000;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: white;
+            transform: scale(1.07);
+        }
+
+        button:disabled {
+            opacity: 0.35;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        @media (max-width: 700px) {
+            .presentation {
+                width: 95%;
+            }
+
+            .slide {
+                padding: 45px 25px 100px;
+                min-height: 600px;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p,
+            ul {
+                font-size: 17px;
+            }
+
+            .animal {
+                font-size: 65px;
+            }
+
+            button {
+                padding: 11px 17px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="presentation">
+
+    <!-- SLIDE 1 -->
+    <section class="slide active">
+        <div class="counter">1 / 7</div>
+
+        <div class="animal">🌍🐾</div>
+
+        <h1>Endangered Animals</h1>
+
+        <p class="subtitle">
+            Animals that are disappearing from our planet
+        </p>
+
+        <p style="margin-top: 25px;">
+            Many animals are becoming endangered because of
+            <span class="highlight">human activities</span>
+            and changes in nature.
+        </p>
+    </section>
+
+
+    <!-- SLIDE 2 -->
+    <section class="slide">
+        <div class="counter">2 / 7</div>
+
+        <div class="animal">⚠️</div>
+
+        <h2>What Does “Endangered” Mean?</h2>
+
+        <p>
+            An endangered animal is an animal whose population
+            is becoming very small and may disappear in the future.
+        </p>
+
+        <ul>
+            <li>🌳 Loss of natural habitats</li>
+            <li>🏹 Hunting and poaching</li>
+            <li>🌊 Pollution</li>
+            <li>🌡️ Climate change</li>
+            <li>🍃 Lack of food</li>
+        </ul>
+    </section>
+
+
+    <!-- SLIDE 3 -->
+    <section class="slide red-book">
+        <div class="counter">3 / 7</div>
+
+        <div class="animal">📕</div>
+
+        <div class="red-book-title">
+            <h2 style="margin: 0; color: white;">
+                The Red Book
+            </h2>
+        </div>
+
+        <p>
+            The <span class="highlight">Red Book</span> is a special
+            list of rare and endangered animals and plants.
+        </p>
+
+        <ul>
+            <li>📕 It contains information about endangered species.</li>
+            <li>🐾 It helps people protect rare animals.</li>
+            <li>🌱 It includes endangered plants too.</li>
+            <li>🛡️ It encourages nature conservation.</li>
+        </ul>
+
+        <p style="margin-top: 15px;">
+            The Red Book reminds us that
+            <span class="highlight">every species is important.</span>
+        </p>
+    </section>
+
+
+    <!-- SLIDE 4 -->
+    <section class="slide">
+        <div class="counter">4 / 7</div>
+
+        <div class="animal">🐅</div>
+
+        <h2>Tigers</h2>
+
+        <p>
+            Tigers are one of the most beautiful and powerful
+            animals in the world.
+        </p>
+
+        <ul>
+            <li>They live mainly in Asia.</li>
+            <li>Their natural habitats are disappearing.</li>
+            <li>Illegal hunting is a serious threat.</li>
+            <li>Protecting forests can help save tigers.</li>
+        </ul>
+    </section>
+
+
+    <!-- SLIDE 5 -->
+    <section class="slide">
+        <div class="counter">5 / 7</div>
+
+        <div class="animal">🐢</div>
+
+        <h2>Sea Turtles</h2>
+
+        <p>
+            Sea turtles live in oceans around the world.
+        </p>
+
+        <ul>
+            <li>Plastic pollution is dangerous for them.</li>
+            <li>They can eat plastic by mistake.</li>
+            <li>Their eggs are threatened on some beaches.</li>
+            <li>Clean oceans and beaches can protect them.</li>
+        </ul>
+    </section>
+
+
+    <!-- SLIDE 6 -->
+    <section class="slide">
+        <div class="counter">6 / 7</div>
+
+        <div class="animal">🦏</div>
+
+        <h2>Rhinoceroses</h2>
+
+        <p>
+            Rhinoceroses are large and powerful animals.
+        </p>
+
+        <ul>
+            <li>Some rhino species are critically endangered.</li>
+            <li>Poaching is a major threat.</li>
+            <li>They need safe places to live.</li>
+            <li>Wildlife protection is very important.</li>
+        </ul>
+    </section>
+
+
+    <!-- SLIDE 7 -->
+    <section class="slide">
+        <div class="counter">7 / 7</div>
+
+        <div class="animal">🌍❤️</div>
+
+        <h2>How Can We Help?</h2>
+
+        <ul>
+            <li>🌳 Protect forests and natural habitats.</li>
+            <li>🚯 Reduce plastic and pollution.</li>
+            <li>🐾 Support wildlife protection.</li>
+            <li>🛑 Never buy products from endangered animals.</li>
+            <li>📢 Teach others about endangered species.</li>
+        </ul>
+
+        <p style="margin-top: 20px;">
+            <span class="highlight">
+                Every animal is important.
+                Let's protect our planet! 🌍
+            </span>
+        </p>
+    </section>
+
+
+    <!-- NAVIGATION BUTTONS -->
+    <div class="buttons">
+
+        <button id="backBtn" onclick="previousSlide()">
+            ⬅ Back
+        </button>
+
+        <button onclick="goHome()">
+            🏠 Home
+        </button>
+
+        <button id="nextBtn" onclick="nextSlide()">
+            Next ➡
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+    let currentSlide = 0;
+
+    const slides = document.querySelectorAll(".slide");
+    const backBtn = document.getElementById("backBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function showSlide(index) {
+
+        slides.forEach(slide => {
+            slide.classList.remove("active");
+        });
+
+        slides[index].classList.add("active");
+
+        // Disable Back on first slide
+        backBtn.disabled = index === 0;
+
+        // Disable Next on last slide
+        nextBtn.disabled = index === slides.length - 1;
+    }
+
+
+    function nextSlide() {
+
+        if (currentSlide < slides.length - 1) {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+    }
+
+
+    function previousSlide() {
+
+        if (currentSlide > 0) {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+    }
+
+
+    function goHome() {
+
+        currentSlide = 0;
+        showSlide(currentSlide);
+
+    }
+
+
+    // Keyboard controls
+    document.addEventListener("keydown", function(event) {
+
+        if (event.key === "ArrowRight") {
+            nextSlide();
+        }
+
+        if (event.key === "ArrowLeft") {
+            previousSlide();
+        }
+
+        if (event.key === "Home") {
+            goHome();
+        }
+
+    });
+
+
+    // Start presentation
+    showSlide(currentSlide);
+</script>
+
+</body>
+</html>
